@@ -1,4 +1,4 @@
-# 🏭 End-to-End Maintenance Data Pipeline
+# End-to-End Maintenance Data Pipeline
 
 ## Project Overview
 This project is a complete end-to-end Data Engineering pipeline designed to process, store, and analyze predictive maintenance telemetry data (AI4I 2020 dataset). By leveraging a Modern Data Stack, the pipeline transforms raw machine sensor data into actionable business intelligence, enabling proactive maintenance strategies and reducing machine downtime.
