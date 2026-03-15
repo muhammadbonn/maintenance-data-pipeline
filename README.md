@@ -25,10 +25,11 @@ The project demonstrates the integration of distributed processing, cloud storag
 ## Repository Structure
 
 ```text
-predictive-maintenance-pipeline/
+maintenance-data-pipeline/
 │
-├── README.md                      # Project documentation
-├── docker-compose.yml             # Docker infrastructure setup
-├── data_profiling.ipynb           # Exploratory Data Analysis & Profiling
-├── uploading_dataset.ipynb        # PySpark cleaning and AWS S3 ingestion
-└── gold_failure_analysis.sql # dbt model for business insights
+├── README.md                                 # Project documentation
+├── 1.docker-compose.yml                      # Docker infrastructure setup for Jupyter Notebook with PySpark Environment
+├── 2.uploading_dataset.ipynb                 # PySpark cleaning and AWS S3 ingestion: Bronze Layer
+├── 3.data_profiling.ipynb                    # Exploratory Data Analysis & Profiling: Silver Layer
+├── 4.snowflake.sql                           # Snowflake Warehouse, Database, and Table
+└── 5.dbt_model_gold_failure_analysis.sql     # dbt model for business insights
