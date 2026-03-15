@@ -1,6 +1,8 @@
+# ==============================================================================
 # run container with: docker-compose up -d
 # to get server link with token in green color run:
 # $log = docker exec jnpyspark jupyter server list | Out-String; if ($log -match 'token=([a-z0-9]+)') { Write-Host "http://localhost:8915/?token=$($matches[1])" -ForegroundColor Green }
+# ==============================================================================
 
 services:
   jupyter-spark:
