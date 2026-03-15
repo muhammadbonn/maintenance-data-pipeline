@@ -1,0 +1,17 @@
+# run container with: docker-compose up -d
+# to get server link with token in green color run:
+# $log = docker exec jnpyspark jupyter server list | Out-String; if ($log -match 'token=([a-z0-9]+)') { Write-Host "http://localhost:8915/?token=$($matches[1])" -ForegroundColor Green }
+
+services:
+  jupyter-spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: jnpyspark
+    ports:
+      - "8915:8888"             # Port for accessing Jupyter Notebook
+      - "4040:4040"             # Port for Spark UI to monitor job performance
+    volumes:
+      - ./:/home/jovyan/work    # Mounts current local directory to the container's workspace
+    environment:
+      - JUPYTER_ENABLE_LAB=yes  # Enables the modern JupyterLab interface
+      - GRANT_SUDO=yes          # Grants sudo privileges to install additional libraries
+    user: root                  # Runs as root to prevent file permission issues when reading/writing
